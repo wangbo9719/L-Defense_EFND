@@ -253,11 +253,6 @@ def evaluation(args, eval_dataset, model, tokenizer, global_step=None, mode='eva
 
             if sum(batch_sents_labels[_i][sample_sorted_predict_sent_idx]):
                 hits_count += 1
-            if sum(batch_sents_labels[_i]) == 0:
-                continue
-            else:
-                sample_evidence_num_ratio = selected_num / len(batch_sents_labels[_i])
-                evidence_num_ratio_list.append(sample_evidence_num_ratio)
 
             #  ---------------- record temp evidence details -----------------
             if args.get_evidences:
