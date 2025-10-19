@@ -82,7 +82,7 @@ def get_raw_datasets(dataset, dataset_dir=None):
         test_dataset_path = os.path.join(dataset_dir, "test")
         train_dataset_raw, dev_dataset_raw, test_dataset_raw = [
             read_RAWFC(_p) for _p in [train_dataset_path, dev_dataset_path, test_dataset_path]]
-    elif dataset == "RAWFC_step2" or dataset == "LIAR_RAW_step2":
+    elif dataset == "RAWFC_step2" or dataset == "LIAR-RAW_step2":
         dataset_dir = dataset_dir or DATASET2PATH[dataset]
         train_dataset_path = os.path.join(dataset_dir, "train_10_evidence_details.json")  # if top-k == 10
         dev_dataset_path = os.path.join(dataset_dir, "eval_10_evidence_details.json")
