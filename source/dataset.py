@@ -380,8 +380,8 @@ class Stage2PredictionDatasetForRoBERTa(Dataset):
         explanations = self.explanations
         inputs_list = []
         for i, claim in tqdm(enumerate(self.claims)):
-            true_exp = explanations[2 * i]
-            false_exp = explanations[2 * i + 1]
+            true_exp = explanations[2 * i][“explanation”] 
+            false_exp = explanations[2 * i + 1][“explanation”] 
             if self.do_filter:
                 if 'The claim' in true_exp[:20]:
                     first_sent = true_exp.split('. ')[0]
